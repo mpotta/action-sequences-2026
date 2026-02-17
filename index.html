@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COSYNE 2026 — The Neural Code of Action Sequences</title>
+  <meta name="description" content="Workshop: The Neural Code of Action Sequences: From Learning to Execution. COSYNE 2026, March 16, 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: hsl(150, 30%, 12%);
+      --card: hsl(150, 28%, 15%);
+      --fg: hsl(0, 0%, 95%);
+      --muted: hsl(150, 15%, 65%);
+      --accent: hsl(38, 65%, 52%);
+      --border: hsl(150, 20%, 22%);
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+    body { background: var(--bg); color: var(--fg); font-family: var(--font-body); line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-display); }
+    a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--fg); }
+    /* Navbar */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: hsla(150, 30%, 12%, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 64rem; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-family: var(--font-display); font-size: 0.875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2rem; font-size: 0.875rem; font-weight: 500; }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+    /* Hero */
+    .hero { padding: 8rem 1.5rem 6rem; max-width: 48rem; margin: 0 auto; }
+    .hero .label { color: var(--accent); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .hero .subtitle { font-size: 1.25rem; color: var(--muted); font-family: var(--font-display); font-style: italic; margin-bottom: 2rem; }
+    .hero .divider { width: 3rem; height: 1px; background: var(--accent); margin-bottom: 2rem; }
+    .hero p.desc { font-size: 1.125rem; color: var(--muted); max-width: 42rem; margin-bottom: 1.5rem; }
+    .hero p.desc-sm { font-size: 1rem; color: var(--muted); max-width: 42rem; margin-bottom: 1.5rem; }
+    /* Schedule */
+    .schedule { padding: 6rem 1.5rem; background: var(--card); }
+    .schedule-inner { max-width: 48rem; margin: 0 auto; }
+    .schedule .label { color: var(--accent); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+    .schedule h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .schedule .date { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; }
+    .event { display: flex; gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+    .event:first-child { border-top: 1px solid var(--border); }
+    .event-time { font-size: 0.875rem; color: var(--muted); font-weight: 500; width: 3.5rem; flex-shrink: 0; padding-top: 0.125rem; }
+    .event-title { font-weight: 500; transition: color 0.2s; }
+    .event:hover .event-title { color: var(--accent); }
+    /* Venue */
+    .venue { padding: 6rem 1.5rem; max-width: 48rem; margin: 0 auto; }
+    .venue .label { color: var(--accent); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+    .venue h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 2rem; }
+    .venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    @media (max-width: 640px) { .venue-grid { grid-template-columns: 1fr; } }
+    .venue h3 { font-size: 1.25rem; font-weight: 500; margin-bottom: 0.75rem; }
+    .venue p { color: var(--muted); font-size: 0.875rem; line-height: 1.7; margin-bottom: 1rem; }
+    .venue h4 { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+    .venue .info-block { margin-bottom: 1.5rem; }
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; }
+    .footer-inner { max-width: 48rem; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; font-size: 0.875rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-brand">COSYNE 2026</span>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#venue">Venue</a>
+      </div>
+    </div>
+  </nav>
+  <section class="hero" id="about">
+    <p class="label">March 16, 2026 · COSYNE 2026</p>
+    <h1>The Neural Code of Action Sequences</h1>
+    <p class="subtitle">From Learning to Execution</p>
+    <div class="divider"></div>
+    <p class="desc">
+      Intelligent behavior in the animal kingdom relies on the ability to swiftly 
+      and smoothly link multiple actions to achieve behavioral goals. For example, 
+      a zebra finch learns to perform a complex set of vocalizations to attract a mate, 
+      much like a skilled musician improvises over a cascade of notes.
+    </p>
+    <p class="desc-sm">
+      Animals flexibly plan and execute sequences of actions, adapting them to immediate 
+      needs and changing environments. Studies investigating the neural basis of sequence 
+      production span a wide range of model organisms, brain regions, and task settings. 
+      We propose that, despite this diversity, the brain is addressing a shared computational 
+      challenge: orchestrating a sequence of actions.
+    </p>
+    <p class="desc-sm">
+      A central theme of our workshop is to define and describe the concept of 'sequencing.' 
+      Does it involve selecting the appropriate actions and arranging them in the correct order? 
+      Does it refer to the neural mechanisms that facilitate smooth transitions between these actions? 
+      Or does it encompass the generation of individual motor commands for each action?
+    </p>
+  </section>
+  <section class="schedule" id="schedule">
+    <div class="schedule-inner">
+      <p class="label">Programme</p>
+      <h2>Schedule</h2>
+      <p class="date">March 16, 2026</p>
+      <div>
+        <div class="event"><span class="event-time">9:00</span><span class="event-title">Registration &amp; Coffee</span></div>
+        <div class="event"><span class="event-time">9:30</span><span class="event-title">Opening Remarks &amp; Workshop Introduction</span></div>
+        <div class="event"><span class="event-time">10:00</span><span class="event-title">Session 1: Defining Sequence Representations</span></div>
+        <div class="event"><span class="event-time">11:00</span><span class="event-title">Coffee Break</span></div>
+        <div class="event"><span class="event-time">11:30</span><span class="event-title">Session 2: Neural Mechanisms of Action Transitions</span></div>
+        <div class="event"><span class="event-time">12:30</span><span class="event-title">Lunch &amp; Poster Session</span></div>
+        <div class="event"><span class="event-time">14:00</span><span class="event-title">Session 3: Motor Command Generation in Sequences</span></div>
+        <div class="event"><span class="event-time">15:00</span><span class="event-title">Coffee Break</span></div>
+        <div class="event"><span class="event-time">15:30</span><span class="event-title">Session 4: Learning and Adaptation of Sequences</span></div>
+        <div class="event"><span class="event-time">16:30</span><span class="event-title">Panel Discussion: What Is Sequencing?</span></div>
+        <div class="event"><span class="event-time">17:30</span><span class="event-title">Closing Remarks</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="venue" id="venue">
+    <p class="label">Location</p>
+    <h2>Venue</h2>
+    <div class="venue-grid">
+      <div>
+        <h3>Kresge Auditorium</h3>
+        <p>
+          Massachusetts Institute of Technology<br />
+          48 Massachusetts Avenue<br />
+          Cambridge, MA 02139
+        </p>
+        <p>
+          Designed by Eero Saarinen, Kresge Auditorium provides a striking 
+          setting at the heart of MIT's campus — minutes from Kendall Square 
+          and the vibrant neuroscience research community of Greater Boston.
+        </p>
+      </div>
+      <div>
+        <div class="info-block">
+          <h4>Getting There</h4>
+          <p>Kendall/MIT station (Red Line) is a 5-minute walk. Logan Airport is 15 minutes by taxi. Limited parking available in the West Garage.</p>
+        </div>
+        <div class="info-block">
+          <h4>Accommodation</h4>
+          <p>Preferred rates are available at The Kendall Hotel and Le Méridien Boston Cambridge. Contact us for booking codes.</p>
+        </div>
+        <div class="info-block">
+          <h4>Contact</h4>
+          <p>info@synaptica-conference.org</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 COSYNE Workshop</span>
+      <span>The Neural Code of Action Sequences</span>
+    </div>
+  </footer>
+</body>
+</html>
