@@ -85,18 +85,55 @@
     }
     .event-list { border-top: 1px solid var(--border); }
     
-    .session-tag { font-family: var(--font-body); font-size: 0.65rem; border: 1px solid var(--accent); color: var(--accent); padding: 0 4px; border-radius: 2px; margin-right: 8px; vertical-align: middle; }
+    .session-tag { font-family: var(--font-body); font-size: 0.8rem; border: 1px solid var(--accent); color: var(--accent); padding: 0 4px; border-radius: 2px; margin-right: 8px; vertical-align: middle; }
     .break { color: var(--accent); font-style: italic; font-family: var(--font-display); }
 
     /* Footer Sections */
-    .info-footer { padding: 4rem 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
-    @media (max-width: 640px) { .info-footer { grid-template-columns: 1fr; gap: 2rem; } }
-    .info-footer h3 { font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--fg); }
-    .info-footer p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
-    .organizer-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    @media (max-width: 480px) { .organizer-list { grid-template-columns: 1fr; } }
+    #organizer-info {
+      padding: 6rem 1.5rem; /* Increased vertical breathing room */
+      border-top: 1px solid var(--border);
+    }
 
-    footer { border-top: 1px solid var(--border); padding: 2rem 0; font-size: 0.75rem; color: var(--muted); text-align: center; }
+    .organizer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Force three columns */
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .organizer-item strong {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--fg);
+    }
+
+    .organizer-item a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .organizer-item a:hover {
+      color: var(--accent);
+    }
+
+    /* Responsive adjustment for tablets/mobile */
+    @media (max-width: 768px) {
+      .organizer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      #organizer-info { padding: 4rem 1.5rem; }
+    }
+
+    /* Venue/Footer Spacing Polish */
+    .info-footer {
+      border-top: 1px solid var(--border);
+      padding: 4rem 1.5rem;
+      background: hsla(150, 30%, 8%, 0.3); /* Subtle contrast shift */
+    }
   </style>
 </head>
 <body>
@@ -107,6 +144,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#schedule">Schedule</a>
+        <a href="#organizer-info">Organizers</a>
         <a href="#venue">Venue</a>
       </div>
     </div>
@@ -270,35 +308,43 @@
     </div>
   </section>
 
-  <section class="section-inner info-footer" id="venue">
-    <div class="venue-info">
-      <span class="label">Venue</span>
-      <h3>Hotel Cascais Miragem</h3>
-      <p>Av. Marginal 8554<br />2754-536 Cascais, Portugal</p>
-      <p style="margin-top: 0.5rem;"><a href="https://www.cascaismirage.com" target="_blank">cascaismirage.com →</a></p>
-    </div>
-    
-    <!-- <div class="organizer-info">
-      <span class="label">Organizers</span>
-      <div class="organizer-list">
-        <div>
-          <p><strong>Meghana Potta</strong><br /><a href="mailto:mpotta@mit.edu">mpotta@mit.edu</a></p>
-        </div>
-        <div>
-          <p><strong>Saurabh Vyas</strong><br /><a href="mailto:vyas@cmu.edu">vyas@cmu.edu</a></p>
-        </div>
-        <div>
-          <p><strong>Mehrdad Jazayeri</strong><br /><a href="mailto:mjaz@mit.edu">mjaz@mit.edu</a></p>
-        </div>
+<section id="organizer-info">
+  <div class="section-inner">
+    <span class="label">Organizers</span>
+    <p style="margin-top: 1rem; color: var(--muted);">For questions regarding the workshop or abstract submissions, please reach out to the organizers.</p>
+    <div class="organizer-grid">
+      <div class="organizer-item">
+        <strong>Meghana Potta</strong>
+        <p><span class="institute" style="display:block; margin-bottom: 0.5rem;">Massachusetts Institute of Technology (MIT)</span></p>
+        <a href="mailto:mpotta@mit.edu">mpotta@mit.edu</a>
       </div>
-    </div> -->
-  </section>
-
-  <footer>
-    <div class="section-inner">
-      © 2026 COSYNE Workshop · The Neural Code of Action Sequences
+      
+      <div class="organizer-item">
+        <strong>Saurabh Vyas</strong>
+        <p><span class="institute" style="display:block; margin-bottom: 0.5rem;">Carnegie Mellon University (CMU)</span></p>
+        <a href="mailto:vyas@cmu.edu">vyas@cmu.edu</a>
+      </div>
+      
+      <div class="organizer-item">
+        <strong>Mehrdad Jazayeri</strong>
+        <p><span class="institute" style="display:block; margin-bottom: 0.5rem;">Massachusetts Institute of Technology (MIT)</span></p>
+        <a href="mailto:mjaz@mit.edu">mjaz@mit.edu</a>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section class="info-footer" id="venue">
+  <div class="section-inner">
+    <div class="venue-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+      <div class="venue-info">
+        <span class="label">Venue</span>
+        <h3 style="font-size: 1.5rem; margin-top: 1rem;">Hotel Cascais Miragem</h3>
+        <p style="color: var(--muted); margin-top: 0.5rem;">Av. Marginal 8554<br />2754-536 Cascais, Portugal</p>
+        <p style="margin-top: 1.5rem;"><a href="https://www.cascaismirage.com" target="_blank" class="highlight-text" style="border-bottom: 1px solid var(--accent);">cascaismirage.com →</a></p>
+      </div>
+  </div>
+</section>
 
 </body>
 </html>
