@@ -69,6 +69,21 @@
     .speaker-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; display: block; }
     .talk-title { font-size: 0.9rem; color: var(--muted); display: block; transition: 0.2s; }
     .event:hover .talk-title { color: var(--fg); }
+
+    .speaker-meta { 
+      display: flex; 
+      align-items: baseline; 
+      gap: 0.5rem; 
+      margin-bottom: 0.2rem; 
+    }
+    .institute { 
+      font-size: 0.75rem; 
+      color: var(--accent); 
+      opacity: 0.8; 
+      font-weight: 500; 
+      letter-spacing: 0.02em;
+    }
+    .event-list { border-top: 1px solid var(--border); }
     
     .session-tag { font-family: var(--font-body); font-size: 0.65rem; border: 1px solid var(--accent); color: var(--accent); padding: 0 4px; border-radius: 2px; margin-right: 8px; vertical-align: middle; }
     .break { color: var(--accent); font-style: italic; font-family: var(--font-display); }
@@ -92,7 +107,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#schedule">Schedule</a>
-        <a href="#details">Details</a>
+        <a href="#venue">Venue</a>
       </div>
     </div>
   </nav>
@@ -103,24 +118,42 @@
     <p class="subtitle">From Learning to Execution</p>
     <div class="divider"></div>
     <div class="desc-grid">
-      <p>Intelligent behavior relies on the ability to link actions into fluid sequences. Whether a zebra finch's song or a human's musical improvisation, the brain solves a shared computational challenge: orchestrating transitions, selecting order, and generating motor commands.</p>
-      <p>This workshop bridges experimental research in humans, primates, rodents, and birds with mechanistic modeling to define the neural code of sequencing by focusing on three key areas: A) skillful execution of motor sequences, B) flexible production of goal-driven sequences, and C) discovering and learning de novo sequences. </p>
-    </div>
+      <div class="col">
+        <p>Intelligent behavior relies on the ability to link actions into fluid sequences. Whether a zebra finch's song or a human's musical improvisation, the brain solves a shared computational challenge: orchestrating transitions, selecting order, and generating motor commands.</p>
+      </div>
+      <div class="col">
+        <p>A central theme of our workshop is to define and describe the concept of 'sequencing.’ Does it involve selecting the appropriate actions and arranging them in the correct order? Does it refer to the neural mechanisms that facilitate smooth transitions between these actions? Or does it encompass the generation of individual motor commands for each action?</p>
+      </div>
+      <div class="col">
+        <p>This workshop bridges experimental research across species with mechanistic modeling to define the neural code of sequencing through three distinct lenses:</p>
+        <p style="margin-top:1rem">
+          <span class="session-tag">A</span> Skillful execution<br>
+          <span class="session-tag">B</span> Flexible goal-driven production<br>
+          <span class="session-tag">C</span> De novo sequence learning
+        </p>
+      </div>
   </section>
 
   <section class="schedule" id="schedule">
     <div class="section-inner">
       <span class="label">Programme</span>
       <h2>Schedule</h2>
-      <span class="date">Monday, March 16</span>
+      <span class="date">Monday, March 16, 2026</span>
 
       <div class="event-list">
-        <div class="event"><span class="event-time">09:00</span><div><span class="speaker-name">Opening Remarks</span></div></div>
+        <div class="event">
+          <span class="event-time">09:00</span>
+          <div><span class="speaker-name">Opening Remarks</span></div>
+        </div>
         
         <div class="event">
           <span class="event-time">09:15</span>
           <div>
-            <span class="speaker-name"><span class="session-tag">A</span>Timothy Behrens</span>
+            <div class="speaker-meta">
+              <span class="session-tag">A</span>
+              <span class="speaker-name">Timothy Behrens</span>
+              <span class="institute">University of Oxford / UCL</span>
+            </div>
             <span class="talk-title">Structuring the Future</span>
           </div>
         </div>
@@ -128,7 +161,11 @@
         <div class="event">
           <span class="event-time">09:45</span>
           <div>
-            <span class="speaker-name"><span class="session-tag">A</span>Theresa Desrochers</span>
+            <div class="speaker-meta">
+              <span class="session-tag">A</span>
+              <span class="speaker-name">Theresa Desrochers</span>
+              <span class="institute">Brown University</span>
+            </div>
             <span class="talk-title">Cognitive Sequences: Parallel Cross-Species Dynamics</span>
           </div>
         </div>
@@ -138,7 +175,11 @@
         <div class="event">
           <span class="event-time">10:30</span>
           <div>
-            <span class="speaker-name"><span class="session-tag">A</span>Meghana Potta</span>
+            <div class="speaker-meta">
+              <span class="session-tag">A</span>
+              <span class="speaker-name">Meghana Potta</span>
+              <span class="institute">Massachusetts Institute of Technology (MIT)</span>
+            </div>
             <span class="talk-title">Why We Get Slower When Actions Get Longer</span>
           </div>
         </div>
@@ -146,7 +187,11 @@
         <div class="event">
           <span class="event-time">11:00</span>
           <div>
-            <span class="speaker-name"><span class="session-tag">B</span>Saurabh Vyas</span>
+            <div class="speaker-meta">
+              <span class="session-tag">B</span>
+              <span class="speaker-name">Saurabh Vyas</span>
+              <span class="institute">Carnegie Mellon University (CMU)</span>
+            </div>
             <span class="talk-title">Flexible Problem Solving in Prefrontal Cortex</span>
           </div>
         </div>
@@ -154,7 +199,11 @@
         <div class="event">
           <span class="event-time">11:30</span>
           <div>
-            <span class="speaker-name"><span class="session-tag">B</span>Shaul Druckmann</span>
+            <div class="speaker-meta">
+              <span class="session-tag">B</span>
+              <span class="speaker-name">Shaul Druckmann</span>
+              <span class="institute">Stanford University</span>
+            </div>
             <span class="talk-title">To Be Announced</span>
           </div>
         </div>
@@ -164,7 +213,11 @@
         <div class="event">
           <span class="event-time">15:00</span>
           <div>
-            <span class="speaker-name"><span class="session-tag">B</span>Katja Kornysheva</span>
+            <div class="speaker-meta">
+              <span class="session-tag">B</span>
+              <span class="speaker-name">Katja Kornysheva</span>
+              <span class="institute">University of Birmingham</span>
+            </div>
             <span class="talk-title">Rethinking the Generative Blueprint for Skilled Actions</span>
           </div>
         </div>
@@ -172,7 +225,11 @@
         <div class="event">
           <span class="event-time">15:30</span>
           <div>
-            <span class="speaker-name"><span class="session-tag">C</span>Marcelo Mattar</span>
+            <div class="speaker-meta">
+              <span class="session-tag">C</span>
+              <span class="speaker-name">Marcelo Mattar</span>
+              <span class="institute">New York University (NYU)</span>
+            </div>
             <span class="talk-title">Planning Action Sequences in Recurrent Circuits</span>
           </div>
         </div>
@@ -180,7 +237,11 @@
         <div class="event">
           <span class="event-time">16:00</span>
           <div>
-            <span class="speaker-name"><span class="session-tag">C</span>Vikram Gadagkar</span>
+            <div class="speaker-meta">
+              <span class="session-tag">C</span>
+              <span class="speaker-name">Vikram Gadagkar</span>
+              <span class="institute">Columbia University</span>
+            </div>
             <span class="talk-title">Dopamine-mediated Reinforcement in Natural Behavior</span>
           </div>
         </div>
@@ -190,19 +251,28 @@
         <div class="event">
           <span class="event-time">16:45</span>
           <div>
-            <span class="speaker-name"><span class="session-tag">C</span>Machiko Ohbayashi</span>
+            <div class="speaker-meta">
+              <span class="session-tag">C</span>
+              <span class="speaker-name">Machiko Ohbayashi</span>
+              <span class="institute">University of Pittsburgh</span>
+            </div>
             <span class="talk-title">Learning Sequential Movements through Repeated Consolidation</span>
           </div>
         </div>
 
-        <div class="event"><span class="event-time">17:15</span><div><span class="speaker-name">Panel Discussion</span></div></div>
+        <div class="event">
+          <span class="event-time">17:15</span>
+          <div>
+            <span class="speaker-name">Panel Discussion</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section-inner info-footer" id="details">
+  <section class="section-inner info-footer" id="venue">
     <div class="venue-info">
-      <span class="label">Location</span>
+      <span class="label">Venue</span>
       <h3>Hotel Cascais Miragem</h3>
       <p>Av. Marginal 8554<br />2754-536 Cascais, Portugal</p>
       <p style="margin-top: 0.5rem;"><a href="https://www.cascaismirage.com" target="_blank">cascaismirage.com →</a></p>
